@@ -47,15 +47,21 @@ metadata: { "tags": "read-first, video, remotion, explainer, chinese, router, li
 
 ---
 
-## 配套第三方 skill(建议装,非必需)
+## 配套第三方 skill · agent 开工前先自举
 
-这套工作流站在几个现成 skill 的肩上——**引用,不搬运**:
+这套工作流依赖三个现成 skill——**引用,不搬运**(也在仓库根 `skills-lock.json` 里声明)。**skills.sh 装本 skill 时不会自动带上它们**,所以 **agent 开工前先确认在不在、缺哪个就装哪个**(全局,已装则是 no-op):
 
-- **`remotion-best-practices`**(`remotion-dev/skills`)—— Remotion 官方最佳实践,搭 composition 时对照。
-- **`humanizer-zh`**(`op7418/Humanizer-zh`)—— 中文去 AI 腔。**「去 AI 腔」这一步必做,工具可选**:装了就用它过一遍,没装就手动对照它的规则(见 `lianyun-video-content` 第 4 节)。
-- **`impeccable`**(`pbakaus/impeccable`)—— 视觉打磨,调 slide 细节时用。
+```bash
+npx -y skills add remotion-dev/skills -g -s remotion-best-practices -y   # Remotion 官方最佳实践
+npx -y skills add op7418/Humanizer-zh -g --all                          # 中文去 AI 腔(脚本必过)
+npx -y skills add pbakaus/impeccable -g --all                          # 视觉打磨
+```
 
-安装命令见仓库 README。
+- **`remotion-best-practices`** —— 搭 composition 时对照。
+- **`humanizer-zh`** —— **「去 AI 腔」这一步必做,工具可选**:装了就用它过一遍,没装就手动对照它的规则(见 `lianyun-video-content` 第 4 节)。
+- **`impeccable`** —— 调 slide 细节、想把视觉做狠时用。
+
+> 人类用户想一次性预装,也可以跑仓库根的 `install.sh`。
 
 ---
 
