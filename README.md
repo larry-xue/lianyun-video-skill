@@ -17,9 +17,7 @@
 
 ## 这是什么
 
-`lianyun-video-skill` 不是一个视频代码库,而是一组 **skill(工作流说明书)**。装上之后,你的 Agent 会**自己安装 Remotion、按你的设计系统搭 composition、把脚本渲染成视频**——你不用先会 Remotion,门槛压到最低。
-
-它抽自「炼云讲堂」这条真实在跑的讲解视频产线,保留了踩过坑的硬标准(安全区、密度、转场、动画触发、逐 slide 抽帧 QA),去掉了账号绑定的私有内容。
+`lianyun-video-skill` 不是一个视频代码库,而是一组 **skill(工作流说明书)**。装上之后,你的 Agent 会**自己安装 Remotion、按你的设计系统搭 composition、把脚本渲染成视频**
 
 ## 解决什么问题
 
@@ -97,7 +95,7 @@ lianyun-video-skill/
 
 ## Demo
 
-下面这条「什么是 token」的讲解视频,是一个**完全没有上下文的 Agent(Codex)只读这套 skill、从零做出来的**——它自己装 Remotion、建 `design.md`、写脚本、搭 composition、渲染成片。
+下面这条「什么是 token」的讲解视频,是一个**完全没有上下文的 Agent(Codex)只读这套 skill、从零做出来的**
 
 | Hook | 类比 | 为什么重要 |
 |---|---|---|
