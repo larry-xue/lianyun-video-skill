@@ -5,6 +5,8 @@
 
 ![lianyun-video](./demo/images/hero.png)
 
+<sub>↑ 这张工作流图由 Codex 用原生生图能力直接生成。</sub>
+
 <p>
   <img alt="version" src="https://img.shields.io/badge/version-0.1.0-blue">
   <img alt="skills" src="https://img.shields.io/badge/skills-4-green">
@@ -65,12 +67,27 @@ Agent 会读入口 skill `lianyun-video`,按四步工作流往下走。
 
 ## 配套第三方 skill(必需)
 
-这套工作流依赖三个现成 skill——**引用,不搬运**。上面的 `install.sh` 已经帮你一起装好;要单独装:
+这套工作流依赖三个现成 skill——**引用,不搬运**,已在仓库根的 [`skills-lock.json`](./skills-lock.json) 里机器可读地声明:
+
+- `remotion-best-practices`(`remotion-dev/skills`)—— Remotion 官方最佳实践
+- `humanizer-zh`(`op7418/Humanizer-zh`)—— 中文去 AI 腔(脚本必过)
+- `impeccable`(`pbakaus/impeccable`)—— 视觉打磨
+
+> ⚠️ `skills add larry-xue/lianyun-video-skill` **只装本仓库这 4 个 skill,不会自动带上这 3 个依赖**。依赖要用下面任一方式单独装。
+
+**装法(任选一)**:
 
 ```bash
-npx -y skills add remotion-dev/skills -g --all      # Remotion 官方最佳实践
-npx -y skills add op7418/Humanizer-zh -g --all       # 中文去 AI 腔(脚本必过)
-npx -y skills add pbakaus/impeccable -g --all        # 视觉打磨
+# ① 全局一键(推荐)——本 skill + 3 个依赖一起装到全局
+bash install.sh
+
+# ② 项目级声明式恢复——在克隆下来的仓库目录内,从 skills-lock.json 恢复这 3 个依赖(装进当前项目,非全局)
+npx skills experimental_install
+
+# ③ 手动单独装到全局
+npx -y skills add remotion-dev/skills -g -s remotion-best-practices -y
+npx -y skills add op7418/Humanizer-zh -g --all
+npx -y skills add pbakaus/impeccable -g --all
 ```
 
 ## 不包含什么(本版本)
@@ -89,6 +106,8 @@ lianyun-video-skill/
 │   ├── lianyun-video-content/    # 选题 → 研究 → 脚本 + 写作硬标准
 │   └── lianyun-video-design/     # design.md 模板 + 视觉/动画/QA reference
 ├── demo/                         # Agent 实跑产出的示例(见下)
+├── skills-lock.json              # 声明第三方依赖(npx skills experimental_install)
+├── install.sh                    # 全局一键安装(本 skill + 3 个依赖)
 ├── LICENSE                       # CC BY-NC 4.0
 └── README.md
 ```
