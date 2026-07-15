@@ -1,0 +1,21 @@
+{
+  "name": "lianyun-token-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "studio": "remotion studio",
+    "render": "remotion render token-explainer out/token-explainer.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.446",
+    "@remotion/google-fonts": "4.0.446",
+    "@remotion/transitions": "4.0.446",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "remotion": "4.0.446",
+    "typescript": "6.0.2"
+  }
+}

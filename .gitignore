@@ -1,0 +1,11 @@
+node_modules/
+out/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+
+# demo 的重产物:保留静帧和短片,忽略中间渲染缓存
+demo/**/node_modules/
+demo/**/out/tmp/
