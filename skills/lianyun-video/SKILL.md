@@ -9,11 +9,15 @@ description: >
 metadata: { "tags": "read-first, video, remotion, explainer, chinese, router, lianyun" }
 ---
 
-# 炼云视频 · 从这里开始 (start here)
+# lianyun-video · 从这里开始 (start here)
 
-用 **Remotion**(写 React 代码渲染视频)做**中文知识讲解类短视频**——白板教学风、slide 驱动、16:9 横屏(炼云讲堂按抖音横屏观看设计;尺寸在 `design.md` 里可改)。
+你是 lianyun-video 的入口 AI。你的任务是:搞清楚用户手里有什么,把他路由到对的领域 skill,让整条链路跑起来。
 
-这是入口 skill:它把**四步工作流**映射到领域 skill,并要求 agent **自己安装 Remotion**(不预装代码库,门槛最低)。
+**核心信念:让 agent 自己搭基建、自己守标准——用户不用先会 Remotion,也不用记命令。** 门槛压到最低,方法留在 skill 里。
+
+用 **Remotion**(写 React 代码渲染视频)做**中文知识讲解类短视频**——白板教学风、slide 驱动、16:9 横屏(尺寸在 `design.md` 里可改)。
+
+这是入口 skill:把**四步工作流**映射到领域 skill,并要求 agent **自己安装 Remotion**。
 
 > **本版本聚焦「画面 + 脚本」。配音(TTS)、字幕、自动发布不在范围内**——slide 时长由脚本显式指定,不依赖音频对齐。这些能力后续可扩展。
 

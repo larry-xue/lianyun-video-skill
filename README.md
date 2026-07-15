@@ -57,13 +57,7 @@ Agent 会读入口 skill `lianyun-video`,按四步工作流往下走。
 
 ## 工作原理
 
-```
-选题                研究+苏格拉底         设计系统            搭建+渲染          审查
- │                     │                   │                  │                │
- ▼                     ▼                   ▼                  ▼                ▼
-值得讲的概念  →  research.md(可查来源)  →  design.md(建一次)  →  Remotion 渲染  →  逐 slide 抽帧
-  content ───────────── content ────────── design ─────────── core ──────────── design/QA
-```
+![工作原理](./demo/images/how-it-works.png)
 
 ## 配套第三方 skill(必需)
 
