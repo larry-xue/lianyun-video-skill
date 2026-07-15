@@ -29,7 +29,7 @@ cd lianyun-video-project
 npm i remotion @remotion/cli @remotion/transitions @remotion/google-fonts
 ```
 
-讲解视频固定用 **1920×1080 @ 30fps**(16:9 横屏——炼云讲堂按「抖音横屏观看」设计,右侧留 340px 给点赞/评论 UI;这个尺寸和安全区可在 `design.md` 里改)。`remotion.config.ts` 见 `templates/remotion.config.ts`。
+讲解视频固定用 **1920×1080 @ 30fps**(16:9 横屏)。内容区**默认左右对称满宽**(视觉均衡);**只有专门发抖音横屏**时,才给 `SlideFrame` 传 `douyinSafeZone` 预留右侧 340px 互动区——否则默认就好,别留那段右空白(会像宽度 bug)。尺寸可在 `design.md` 里改。`remotion.config.ts` 见 `templates/remotion.config.ts`。
 
 渲染需要 Chrome/Chromium,Remotion 首次渲染会自动下载 headless shell;CI/无头环境按官方文档装系统依赖。
 
@@ -157,7 +157,7 @@ for f in 0 60 120 180 240 300; do npx remotion still my-video out/f_$f.png --fra
 - [ ] `npx tsc --noEmit` 类型通过
 - [ ] 逐 slide 抽帧:正文没溢出安全区、SVG label 没压数据线、相邻帧换行不漂移
 - [ ] 首帧(frame 0)干净可做封面
-- [ ] 右侧 ~340px 抖音互动区没放可读内容(见 `lianyun-video-design` 的 frame chrome)
+- [ ] 内容左右均衡,右侧没有大段空白(仅当 `douyinSafeZone=true` 才应有右 340px 留白)
 - [ ] 脚本已过「去 AI 腔」(`humanizer-zh` 或手动对照其规则)
 
 细节标准(安全区尺寸、密度、动画触发)在 `lianyun-video-design/references/`。

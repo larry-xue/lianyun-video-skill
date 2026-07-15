@@ -3,6 +3,8 @@
 > 用 AI Agent + **Remotion** 做中文知识讲解类短视频的 packed skill。
 > 给你的 Agent 装上它,从**选题 → 研究 → 写脚本 → 搭 Remotion 工程 → 渲染成片**,一条链路跑下来。
 
+![lianyun-video](./demo/images/hero.png)
+
 <p>
   <img alt="version" src="https://img.shields.io/badge/version-0.1.0-blue">
   <img alt="skills" src="https://img.shields.io/badge/skills-4-green">
@@ -30,12 +32,13 @@
 
 ## 快速开始
 
+**一键安装**(本 skill + 依赖的第三方 skill,全部装到全局 skills 目录):
+
 ```bash
-# 安装(装到全局 skills 目录,多数 Agent 都能读到)
-npx -y skills add larry-xue/lianyun-video-skill -g --all
+bash <(curl -fsSL https://raw.githubusercontent.com/larry-xue/lianyun-video-skill/main/install.sh)
 ```
 
-然后对你的 Agent 说:
+或克隆本仓库后跑 `bash install.sh`。装好后对你的 Agent 说:
 
 ```
 用 lianyun-video 做一条讲「什么是 token」的讲解视频
@@ -62,9 +65,9 @@ Agent 会读入口 skill `lianyun-video`,按四步工作流往下走。
   content ───────────── content ────────── design ─────────── core ──────────── design/QA
 ```
 
-## 配套第三方 skill(建议装,非必需)
+## 配套第三方 skill(必需)
 
-这套工作流站在几个现成 skill 的肩上——**引用,不搬运**:
+这套工作流依赖三个现成 skill——**引用,不搬运**。上面的 `install.sh` 已经帮你一起装好;要单独装:
 
 ```bash
 npx -y skills add remotion-dev/skills -g --all      # Remotion 官方最佳实践
@@ -94,7 +97,7 @@ lianyun-video-skill/
 
 ## Demo
 
-下面这条「什么是 token」的讲解视频,是一个**完全没有上下文的 Agent(Codex)只读这套 skill、从零做出来的**——它自己装 Remotion、建 `design.md`、写脚本、搭 composition、渲染成片。这证明 skill 对陌生 Agent 也能端到端跑通。
+下面这条「什么是 token」的讲解视频,是一个**完全没有上下文的 Agent(Codex)只读这套 skill、从零做出来的**——它自己装 Remotion、建 `design.md`、写脚本、搭 composition、渲染成片。
 
 | Hook | 类比 | 为什么重要 |
 |---|---|---|
@@ -104,4 +107,4 @@ lianyun-video-skill/
 
 ## License
 
-[CC BY-NC 4.0](./LICENSE) —— 可自由分享、改编,但**不得用于商业用途**,须署名。
+[CC BY-NC 4.0](./LICENSE)

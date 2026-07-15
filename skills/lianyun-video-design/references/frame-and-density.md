@@ -20,7 +20,8 @@
 - **top 140**:给 section eyebrow + brand tag 的 chrome 区。
 - **bottom 180**:内容**绝对**不低于 y=900(横屏时底部易被 UI 挡)。
 - **left 72**:内容左起点。全宽色带用负边距 `left:-72` 突出,body `overflow: visible`。
-- **右 340px(x 1580→1920)**:抖音横屏观看时被互动 UI 覆盖——正文、数据、关键图都不进这条。brand tag / 页码这类装饰 chrome 不受限。
+- **默认:左右对称满宽**(left/right 各 72,内容宽 1776),视觉均衡,适合大多数平台和独立视频。**别默认留右侧 340px**——那会让画面左重右空,看着像宽度出了 bug。
+- **抖音横屏(可选)**:抖音横屏观看时右侧点赞/评论/分享 UI 会盖住约 340px。**只有专门发抖音横屏**才给 `SlideFrame` 传 `douyinSafeZone`,内容缩到 1508 宽,把正文/数据/关键图挡在安全线内(brand tag / 页码一起内收)。上面那张 ascii 图画的就是 `douyinSafeZone=true` 的布局。
 
 ## 背景
 
