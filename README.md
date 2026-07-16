@@ -5,8 +5,6 @@
 
 ![lianyun-video](./demo/images/hero.png)
 
-<sub>↑ 这张工作流图由 Codex 用原生生图能力直接生成。</sub>
-
 <p>
   <img alt="version" src="https://img.shields.io/badge/version-0.1.0-blue">
   <img alt="skills" src="https://img.shields.io/badge/skills-4-green">
